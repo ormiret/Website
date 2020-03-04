@@ -316,6 +316,7 @@ class BankAccount(db.Model):
     address = db.Column(db.String, nullable=False)
     swift = db.Column(db.String, nullable=False)
     iban = db.Column(db.String, nullable=False)
+    borderless_account_id = db.Column(db.String)
 
     def __init__(
         self, sort_code, acct_id, currency, active, institution, address, swift, iban
