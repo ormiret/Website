@@ -1282,7 +1282,7 @@ description = "Python library for the TransferWise API"
 name = "pytransferwise"
 optional = false
 python-versions = ">=3.7,<4.0"
-version = "0.1.1"
+version = "0.1.2"
 
 [package.dependencies]
 apiron = ">=5.0.0,<6.0.0"
@@ -1659,7 +1659,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "517d3675522464d687d1c3531af3d74964ae00edcdc5087fa1d67ac13ab090d6"
+content-hash = "817da5c7c910d77d3d75219642f4cdb970cd127c3d47c51aa16187067c7e65ec"
 python-versions = "~3.7"
 
 [metadata.files]
@@ -2293,8 +2293,8 @@ python-memcached = [
     {file = "python-memcached-1.58.tar.gz", hash = "sha256:2775829cb54b9e4c5b3bbd8028680f0c0ab695db154b9c46f0f074ff97540eb6"},
 ]
 pytransferwise = [
-    {file = "pytransferwise-0.1.1-py3-none-any.whl", hash = "sha256:3e76b448d0b7ae2347a114ce85d87b56d85910942bbe0ed55dc2e96a21cf66bc"},
-    {file = "pytransferwise-0.1.1.tar.gz", hash = "sha256:5b69b1d22352c774013796709544a33cb97b44af3449ac293c46ee7e1626f7e5"},
+    {file = "pytransferwise-0.1.2-py3-none-any.whl", hash = "sha256:470ce035c099cdb9287ba8ae9e9ee7653b9fc803516935e5eed8a38083ca5ee4"},
+    {file = "pytransferwise-0.1.2.tar.gz", hash = "sha256:637977809a7492965fcd1febbca7920a6b48794bb9e88d3f3adfd46c52dd5350"},
 ]
 pytz = [
     {file = "pytz-2019.3-py2.py3-none-any.whl", hash = "sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d"},
