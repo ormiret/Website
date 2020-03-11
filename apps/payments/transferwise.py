@@ -126,15 +126,25 @@ def transferwise_business_profile():
 
 def _collect_bank_accounts(borderless_account):
     for balance in borderless_account.balances:
-        if not balance.bankDetails:
+        try:
+            if not balance.bankDetails:
+                continue
+            if not balance.bankDetails.bankAddress:
+                continue
+            if not balance.bankDetails.swift:
+                continue
+            if not balance.bankDetails.iban:
+                continue
+        except AttributeError:
             continue
 
         address = ", ".join(
             [
-                balance.bankAddress.addressFirstLine,
-                balance.bankAddress.city,
-                balance.bankAddress.postCode,
-                balance.bankAddress.country,
+                balance.bankDetails.bankAddress.addressFirstLine,
+                balance.bankDetails.bankAddress.city
+                + " "
+                + (balance.bankDetails.bankAddress.postCode or ""),
+                balance.bankDetails.bankAddress.country,
             ]
         )
         yield BankAccount(
@@ -142,7 +152,7 @@ def _collect_bank_accounts(borderless_account):
             acct_id=None,
             currency=balance.bankDetails.currency,
             active=False,
-            institution=balance.bankName,
+            institution=balance.bankDetails.bankName,
             address=address,
             swift=balance.bankDetails.swift,
             iban=balance.bankDetails.iban,
